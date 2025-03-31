@@ -1,9 +1,33 @@
 package Ejercicios;
 
-public class Ejercicio1_MAA {
+import java.util.*;
 
+public class Ejercicio1_MAA {
+	private static Scanner sc = new Scanner(System.in);
+	
 	public static void main(String[] args) {
-		auditoriaEmpresa(2500, 1800, 1300, 10, true, 75000);
+		// Pregunta los datos
+		System.out.println("Dime el salario del jefe:");
+		double salarioJefe = sc.nextDouble();
+		System.out.println("Dime el salario del encargado:");
+		double salarioEncargado = sc.nextDouble();
+		System.out.println("Dime el salario de los oficinistas:");
+		double salarioOficinistas = sc.nextDouble();
+		System.out.println("Dime el numero de oficinistas:");
+		int numeroOficinistas = sc.nextInt();
+		System.out.println("Estan los proyectos terminados? (s / n)");
+		String respuesta = sc.nextLine();
+		boolean proyectosTerminados = false;
+		if (respuesta.toLowerCase().equals("s")) {
+			proyectosTerminados = true;
+		} else {
+			System.out.println("Me lo tomare como un no");
+			proyectosTerminados = false;
+		}
+		System.out.println("Dime el presupuesto de la empresa:");
+		double presupuestoEmpresa = sc.nextDouble();
+		// Empieza el programa
+		auditoriaEmpresa(salarioJefe, salarioEncargado, salarioOficinistas, numeroOficinistas, proyectosTerminados, presupuestoEmpresa);
 	}
 	
 	public static boolean auditoriaEmpresa(double salarioJefe, double salarioEncargado, double salarioOficinistas, int numeroOficinistas, boolean proyectosTerminados, double presupuestoEmpresa) {
