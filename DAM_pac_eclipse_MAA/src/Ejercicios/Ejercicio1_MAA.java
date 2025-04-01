@@ -15,6 +15,7 @@ public class Ejercicio1_MAA {
 		double salarioOficinistas = sc.nextDouble();
 		System.out.println("Dime el numero de oficinistas:");
 		int numeroOficinistas = sc.nextInt();
+		sc.nextLine(); // Salto de linea
 		System.out.println("Estan los proyectos terminados? (s / n)");
 		String respuesta = sc.nextLine();
 		boolean proyectosTerminados = false;
@@ -31,10 +32,10 @@ public class Ejercicio1_MAA {
 	}
 	
 	public static boolean auditoriaEmpresa(double salarioJefe, double salarioEncargado, double salarioOficinistas, int numeroOficinistas, boolean proyectosTerminados, double presupuestoEmpresa) {
-		boolean apto = false;
+		boolean apto = true;
 		// Comprobacion proyectos
 		if (!proyectosTerminados) {
-			System.out.println("No ha pasado la auditoría ya que no ha terminado losproyectos acordados");
+			System.out.println("No ha pasado la auditoría ya que no ha terminado los proyectos acordados");
 			return !apto;
 		} else {
 			double gastoAcumulado = salarioJefe + salarioEncargado + salarioOficinistas;
